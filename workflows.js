@@ -25,8 +25,9 @@ serenade.global().command("square brackets out", async (api,matches) => {
 serenade.app("code").command("edit custom commands", async (api) => {
 	await api.pressKey("t", ["control", "alt", "shift"]);
 	await api.typeText("cd C:\\");
+	await api.pressKey("enter");
 	await api.typeText("cd C:\\Users\\MPhil\\.serenade");
-	await api.pressKey("return");
+	await api.pressKey("enter");
 	await api.pressKey("enter");
 	await api.typeText("code .");
 	await api.pressKey("enter");
