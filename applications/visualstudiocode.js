@@ -101,3 +101,18 @@ serenade.app("code").command("font zoom in", async (api,matches) => {
 serenade.app("code").command("font zoom out", async (api,matches) => {
 	await api.evaluateInPlugin("editor.action.fontZoomOut")
 });
+serenade.app("code").command("toggle problems", async (api,matches) => {
+	await api.evaluateInPlugin("workbench.action.tasks.toggleProblems")
+});
+serenade.app("code").command("line down <%number%>", async (api,matches) => {
+	const lines = matches.number;
+	for (let i = 0; i < lines; i++) {
+		await api.evaluateInPlugin("editor.action.moveLinesDownAction")
+	}
+});
+serenade.app("code").command("line up <%number%>", async (api,matches) => {
+	const lines = matches.number;
+	for (let i = 0; i < lines; i++) {
+		await api.evaluateInPlugin("editor.action.moveLinesUpAction")
+	}
+});

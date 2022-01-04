@@ -6,6 +6,14 @@ serenade.global().command("curly brackets out", async (api) => {
 	await api.typeText("{}");
 	await api.pressKey("space");
 });
+serenade.global().command("chevron in", async (api,matches) => {
+	await api.typeText("<>");
+	await api.pressKey("left");
+});
+serenade.global().command("chevron out", async (api,matches) => {
+		await api.typeText("<>");
+		await api.pressKey("space");
+});
 serenade.global().command("brackets in", async (api) => {
 	await api.typeText("()");
 	await api.pressKey("left");
@@ -64,12 +72,17 @@ serenade.global().command("fresh line", async (api,matches) => {
 	await api.pressKey("end");
 	await api.pressKey("enter");
 });
-serenade.global().command("fresh line above", async (api,matches) => {
+serenade.global().command("fresh line above home", async (api,matches) => {
 	await api.pressKey("end");
 	await api.pressKey("up");
 	await api.pressKey("home");
 	await api.pressKey("enter");
 	await api.pressKey("up");
+});
+serenade.global().command("fresh line above", async (api,matches) => {
+	await api.pressKey("up");
+	await api.pressKey("end");
+	await api.pressKey("enter");
 });
 serenade.global().command("words semi colon", async (api,matches) => {
 	await api.pressKey("end");
@@ -118,3 +131,24 @@ serenade.global().command("backspace <%number%>", async (api,matches) => {
 		await api.pressKey("delete");
 	}
 }); */
+serenade.global().command("move down", async (api,matches) => {
+	await api.pressKey("down");
+});
+serenade.global().command("move up", async (api,matches) => {
+	await api.pressKey("up");
+});
+serenade.global().command("move to bottom", async (api,matches) => {
+	await api.pressKey("end", ["control"]);
+});
+serenade.global().command("move to top", async (api,matches) => {
+	await api.pressKey("home", ["control"]);
+});
+serenade.global().command("hyphen", async (api,matches) => {
+	await api.pressKey("-");
+});
+serenade.global().command("home it", async (api,matches) => {
+	await api.pressKey("home");
+});
+serenade.global().command("end it", async (api,matches) => {
+	await api.pressKey("end");
+});
