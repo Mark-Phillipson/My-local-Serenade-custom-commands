@@ -40,15 +40,6 @@ serenade.app("code").command("edit custom commands", async (api) => {
 	await api.typeText("code .");
 	await api.pressKey("enter");
 });
-
-// serenade.global().command("begin course internal", async (api) => {
-//  await api.pressKey("ctrl+alt+shift+t");
-//  await api.wait(2000);
-//  await api.typeText("cd C:\\Users\\MPhil\\source\\repos\\web-dev-starter");
-//  await api.pressKey("enter");
-//  await api.typeText("npm start");
-//  await api.pressKey("enter");
-// });
 //Custom keyboard command to transfer focus to the internal terminal (Ctrl + ' in use by clipboard manager)
 serenade.app("code").command("focus terminal", async (api) => {
 	await api.pressKey("t", ["control", "alt", "shift"]);
@@ -59,8 +50,9 @@ serenade.global().command("wake up", async (api) => {
 });
 serenade.global().command("open command prompt", async (api) => {
 	await api.pressKey("r",["windows"]);
-	await api.wait(200);
+	await api.delay(300);
 	await api.typeText("cmd");
+	await api.pressKey("enter", []);
 });
 serenade.app("code").command("command dotnet watch", async (api) => {
 	//await api.focusOrLaunchApplication("cmd");
@@ -124,13 +116,12 @@ serenade.global().command("backspace <%number%>", async (api,matches) => {
 		await api.pressKey("backspace");
 	}
 });
-// this interferes with serenade commands
-/* serenade.global().command("delete <%number%>", async (api,matches) => {
+serenade.global().command("delete characters <%number%>", async (api,matches) => {
 	const increments = parseInt(matches.number);
 	for (let index = 0; index < increments; index++) {
 		await api.pressKey("delete");
 	}
-}); */
+});
 serenade.global().command("move down", async (api,matches) => {
 	await api.pressKey("down");
 });
@@ -152,3 +143,33 @@ serenade.global().command("home it", async (api,matches) => {
 serenade.global().command("end it", async (api,matches) => {
 	await api.pressKey("end");
 });
+serenade.global().command("clear line", async (api,matches) => {
+	await api.pressKey("home");
+	await api.pressKey("end", ["shift"]);
+	await api.pressKey("delete");
+});
+// this works but no response in the application!
+serenade.global().command("clipboard manager", async (api,matches) => {
+	await api.pressKey("'", ["control"]);
+});
+serenade.global().command("slap", async (api,matches) => {
+	await api.pressKey("end", []);
+	await api.pressKey("enter");
+});
+serenade.global().command("fold all", async (api,matches) => {
+	await api.pressKey("k", ["control"]);
+	await api.pressKey("0", ["control"]);
+});
+serenade.global().command("unfold all", async (api,matches) => {
+	await api.pressKey("k", ["control"]);
+	await api.pressKey("j", ["control"]);
+});
+serenade.global().command("fold region", async (api,matches) => {
+	await api.pressKey("k", ["control"]);
+	await api.pressKey("[", ["control"]);
+});
+serenade.global().command("unfold region", async (api,matches) => {
+	await api.pressKey("k", ["control"]);
+	await api.pressKey("]", ["control"]);
+});
+

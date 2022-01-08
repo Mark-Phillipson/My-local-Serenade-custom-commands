@@ -4,7 +4,6 @@ serenade.app("code").command("close all tabs", async (api) => {
 serenade.app("code").command("show explorer", async (api, matches) => {
 	await api.evaluateInPlugin("workbench.view.explorer");
 });
-
 serenade.app("code").command("toggle sidebar", async (api, matches) => {
 	await api.evaluateInPlugin("workbench.action.toggleSidebarVisibility")
 });
@@ -31,7 +30,7 @@ serenade.app("code").command("select all matching", async (api, matches) => {
 serenade.app("code").command("select matching <%number%>", async (api, matches) => {
 	const increment = parseInt(matches.number);
 	for (let index = 0; index < increment; index++) {
-		await api.evaluateInPlugin("openEditors.closeAll");
+	await api.evaluateInPlugin("editor.action.addSelectionToNextFindMatch")
 	}
 });
 serenade.app("code").command("select a language <%language%>", async (api, matches) => {
@@ -115,4 +114,67 @@ serenade.app("code").command("line up <%number%>", async (api,matches) => {
 	for (let i = 0; i < lines; i++) {
 		await api.evaluateInPlugin("editor.action.moveLinesUpAction")
 	}
+});
+serenade.app("code").command("list directory", async (api, matches) => {
+	await api.typeText("dir");
+	await api.pressKey("enter");
+});
+serenade.app("code").command("current directory", async (api,matches) => {
+	await api.typeText("cd ")
+});
+serenade.app("code").command("visual studio projects", async (api,matches) => {
+	await api.typeText("C:\\Users\\MPhil\\source\\repos")
+});
+serenade.app("code").command("dotnet watch", async (api,matches) => {
+	await api.typeText("dotnet watch run");
+	await api.pressKey("enter");
+});
+serenade.app("code").command("dotnet clean", async (api,matches) => {
+	await api.typeText("dotnet clean");
+	await api.pressKey("enter");
+});
+serenade.app("code").command("dotnet build", async (api,matches) => {
+	await api.typeText("dotnet build");
+	await api.pressKey("enter");
+});
+serenade.app("code").command("dotnet run", async (api,matches) => {
+	await api.typeText("dotnet run");
+	await api.pressKey("enter");
+});
+serenade.app("code").command("shutdown", async (api,matches) => {
+	await api.pressKey("c", ["control"]);
+});
+serenade.app("code").command("restart", async (api,matches) => {
+	await api.pressKey("r", ["control"]);
+});
+serenade.app("code").command("current project folder", async (api,matches) => {
+	await api.typeText("C:\\Users\\MPhil\\source\\repos\\Words\\WordsDotNet6")
+});
+serenade.app("code").command("run code", async (api,matches) => {
+	await api.typeText("code .")
+	await api.pressKey("enter");
+});
+serenade.app("code").command("git add", async (api,matches) => {
+	await api.typeText("git add ");
+});
+serenade.app("code").command("git status", async (api,matches) => {
+	await api.typeText("git status");
+	await api.pressKey("enter");
+});
+serenade.app("code").command("git commit", async (api,matches) => {
+	await api.typeText('git commit -m ""')
+	await api.pressKey("left");
+});
+serenade.app("code").command("git push", async (api,matches) => {
+	await api.typeText("git push");
+	await api.pressKey("enter");
+});
+serenade.app("code").command("edit custom commands", async (api,matches) => {
+	await api.typeText("cd C:\\Users\\MPhil\\.serenade");
+	await api.pressKey("enter");
+	await api.typeText("code .");
+	await api.pressKey("enter");
+});
+serenade.app("code").command("git clone", async (api,matches) => {
+	await api.typeText("git clone ");
 });
