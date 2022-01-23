@@ -19,7 +19,7 @@ serenade.global().snippet(
 	},
 	"class"
 );
-serenade.language("c#").snippet(
+serenade.global().snippet(
 	"get and set",
 	" { get; set;}"
 );

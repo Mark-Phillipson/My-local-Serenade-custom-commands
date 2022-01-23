@@ -24,3 +24,21 @@ serenade.global().command("snap window down", async (api,matches) => {
 serenade.global().command("context menu", async (api,matches) => {
   await api.pressKey("f10", ["shift"]);
 });
+serenade.global().command("maximize window", async (api,matches) => {
+  await api.pressKey("space", ["alt"]);
+  await api.delay(300);
+  await api.pressKey("x", []);
+});
+serenade.global().command("window monitor switch", async (api,matches) => {
+  await api.pressKey("right", ["win", "shift"]);
+});
+serenade.global().command("restore window", async (api,matches) => {
+  await api.pressKey("space", ["alt"]);
+  await api.delay(300);
+  await api.pressKey("r", []);
+});
+serenade.global().command("resize window", async (api,matches) => {
+  await api.pressKey("space", ["alt"]);
+  await api.delay(300);
+  await api.pressKey("s", []);
+});

@@ -31,7 +31,7 @@ serenade.app("cmd").command("restart", async (api,matches) => {
 	await api.pressKey("r", ["control"]);
 });
 serenade.app("cmd").command("current project folder", async (api,matches) => {
-	await api.typeText("C:\\Users\\MPhil\\source\\repos\\Words\\WordsDotNet6")
+	await api.typeText("C:\\Users\\MPhil\\source\\repos\\Words\\cautious-robot\\client");
 });
 serenade.app("cmd").command("run code", async (api,matches) => {
 	await api.typeText("code .")
@@ -63,4 +63,11 @@ serenade.app("cmd").command("git clone", async (api,matches) => {
 });
 serenade.app("cmd").command("serenade custom commands folder", async (api,matches) => {
 	await api.typeText("C:\\Users\\MPhil\\vscode\\custom-commands");
+});
+serenade.app("cmd").command("close window", async (api,matches) => {
+	await api.pressKey("f4", ["alt"]);
+});
+serenade.app("cmd").command("git commit add", async (api,matches) => {
+	await api.typeText('git commit -am ""');
+	await api.pressKey("left", []);
 });
