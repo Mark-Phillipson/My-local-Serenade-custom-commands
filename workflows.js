@@ -1,4 +1,4 @@
-var open=require('open');
+const open=require('open');
 serenade.global().command("curly brackets in", async (api) => {
 	await api.typeText("{}");
 	await api.pressKey("left");
@@ -173,32 +173,16 @@ serenade.global().command("unfold region", async (api, matches) => {
 	await api.pressKey("k", ["control"]);
 	await api.pressKey("]", ["control"]);
 });
-
-
+const app ='C:\\Users\\MPhil\\source\\repos\\SpeechRecognitionHelpers\\VoiceLauncher\\bin\\Release\\VoiceLauncher.exe';
 serenade.global().command("search union <%SearchTerm%>", async (api, matches) => {
-	// This does not work
-	// await api.focusOrLaunchApplication('
-	// );
-	// This works but is a bit of a hack
-	await api.pressKey("r", ["windows"]);
-	await api.delay(100);
-	await api.typeText('"C:\\Users\\MPhil\\source\\repos\\SpeechRecognitionHelpers\\VoiceLauncher\\bin\\Release\\VoiceLauncher.exe" " / Union " " / ' + matches.SearchTerm + '"')
-	await api.delay(200);
-	await api.pressKey("enter", []);
+	await open.openApp(app, { arguments: [' / Union ',' / ' + matches.SearchTerm + '']});
 });
+//to do:
 serenade.global().command("show list <%SearchTerm%>", async (api, matches) => {
-	await api.pressKey("r", ["windows"]);
-	await api.delay(100);
-	await api.typeText('"C:\\Users\\MPhil\\source\\repos\\SpeechRecognitionHelpers\\VoiceLauncher\\bin\\Release\\VoiceLauncher.exe" " / Unknown " " / Unknown " " /  ' + matches.SearchTerm + '"')
-	await api.delay(200);
-	await api.pressKey("enter", []);
+	await open.openApp(app, { arguments: [' / Unknown ',' / Unknown ',' / ' + matches.SearchTerm + '']});
 });
 serenade.global().command("intelli sense <%SearchTerm%>", async (api, matches) => {
-	await api.pressKey("r", ["windows"]);
-	await api.delay(100);
-	await api.typeText('"C:\\Users\\MPhil\\source\\repos\\SpeechRecognitionHelpers\\VoiceLauncher\\bin\\Release\\VoiceLauncher.exe" " / Not Applicable " " /  ' + matches.SearchTerm + '"')
-	await api.delay(200);
-	await api.pressKey("enter", []);
+		await open.openApp(app, { arguments: [' / Not Applicable ',' / ' + matches.SearchTerm + '']});
 });
 serenade.global().command("open google", async (api,matches) => {
 	open('http://google.com');
