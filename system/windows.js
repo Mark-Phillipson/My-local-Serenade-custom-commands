@@ -42,3 +42,33 @@ serenade.global().command("resize window", async (api,matches) => {
   await api.delay(300);
   await api.pressKey("s", []);
 });
+serenade.global().command("switch to one", async (api, matches) => {
+	await api.pressKey("1", ["win"]);
+});
+serenade.global().command("switch to two", async (api, matches) => {
+	await api.pressKey("2", ["win"]);
+});
+serenade.global().command("switch to three", async (api, matches) => {
+	await api.pressKey("3", ["win"]);
+});
+serenade.global().command("switch to four", async (api, matches) => {
+	await api.pressKey("4", ["win"]);
+});
+serenade.global().command("switch to five", async (api, matches) => {
+	await api.pressKey("5", ["win"]);
+});
+serenade.global().command("switch to six", async (api, matches) => {
+	await api.pressKey("6", ["win"]);
+});
+serenade.global().command("switch to seven", async (api, matches) => {
+	await api.pressKey("7", ["win"]);
+});
+serenade.global().command("switch to eight", async (api, matches) => {
+	await api.pressKey("8", ["win"]);
+});
+serenade.global().command("switch to nine", async (api, matches) => {
+	await api.pressKey("9", ["win"]);
+});
+serenade.global().command("switch to zero", async (api, matches) => {
+	await api.pressKey("0", ["win"]);
+});

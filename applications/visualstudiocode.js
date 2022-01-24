@@ -165,6 +165,10 @@ serenade.app("code").command("git commit", async (api,matches) => {
 	await api.typeText('git commit -m ""')
 	await api.pressKey("left");
 });
+serenade.app("code").command("git add and commit", async (api, matches) => {
+	await api.typeText('git commit -am ""')
+	await api.pressKey("left");
+});
 serenade.app("code").command("git push", async (api,matches) => {
 	await api.typeText("git push");
 	await api.pressKey("enter");
@@ -177,4 +181,31 @@ serenade.app("code").command("edit custom commands", async (api,matches) => {
 });
 serenade.app("code").command("git clone", async (api,matches) => {
 	await api.typeText("git clone ");
+});
+serenade.app("code").command("toggle bookmark", async (api, matches) => {
+	await api.pressKey("k", ["control", "alt"]);
+});
+serenade.app("code").command("list bookmarks", async (api, matches) => {
+	await api.pressKey("b", ["control", "alt"]);
+	await api.pressKey("l", ["control", "alt"]);
+});
+serenade.app("code").command("list all bookmarks", async (api, matches) => {
+	await api.pressKey("b", ["control", "shift"]);
+	await api.pressKey("a", ["control", "shift"]);
+});
+serenade.app("code").command("toggle bookmark labelled", async (api, matches) => {
+	await api.pressKey("l", ["control", "shift", "alt"]);
+	await api.pressKey("l", ["control", "shift", "alt"]);
+});
+serenade.app("code").command("clear all bookmarks", async (api, matches) => {
+	await api.pressKey("b", ["control", "shift"]);
+	await api.pressKey("c", ["control", "shift"]);
+});
+serenade.app("code").command("next bookmark", async (api, matches) => {
+	await api.pressKey("b", ["control", "alt"]);
+	await api.pressKey("n", ["control", "alt"]);
+});
+serenade.app("code").command("previous bookmark", async (api, matches) => {
+	await api.pressKey("b", ["control", "shift"]);
+	await api.pressKey("p", ["control", "shift"]);
 });
