@@ -165,7 +165,7 @@ serenade.app("code").command("git commit", async (api,matches) => {
 	await api.typeText('git commit -m ""')
 	await api.pressKey("left");
 });
-serenade.app("code").command("git add and commit", async (api, matches) => {
+serenade.app("code").command("git add commit", async (api, matches) => {
 	await api.typeText('git commit -am ""')
 	await api.pressKey("left");
 });
@@ -182,6 +182,7 @@ serenade.app("code").command("edit custom commands", async (api,matches) => {
 serenade.app("code").command("git clone", async (api,matches) => {
 	await api.typeText("git clone ");
 });
+//https://github.com/alefragnani/vscode-bookmarks
 serenade.app("code").command("toggle bookmark", async (api, matches) => {
 	await api.pressKey("k", ["control", "alt"]);
 });
@@ -208,4 +209,8 @@ serenade.app("code").command("next bookmark", async (api, matches) => {
 serenade.app("code").command("previous bookmark", async (api, matches) => {
 	await api.pressKey("b", ["control", "shift"]);
 	await api.pressKey("p", ["control", "shift"]);
+});
+serenade.app("code").command("bookmark select lines", async (api, matches) => {
+	await api.pressKey("b", ["control", "shift"]);
+	await api.pressKey("x", ["control", "shift"]);
 });

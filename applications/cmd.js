@@ -67,7 +67,7 @@ serenade.app("cmd").command("serenade custom commands folder", async (api,matche
 serenade.app("cmd").command("close window", async (api,matches) => {
 	await api.pressKey("f4", ["alt"]);
 });
-serenade.app("cmd").command("git commit add", async (api,matches) => {
-	await api.typeText('git commit -am ""');
-	await api.pressKey("left", []);
+serenade.app("cmd").command("git add commit", async (api, matches) => {
+	await api.typeText('git commit -am ""')
+	await api.pressKey("left");
 });
