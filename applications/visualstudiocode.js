@@ -214,3 +214,6 @@ serenade.app("code").command("bookmark select lines", async (api, matches) => {
 	await api.pressKey("b", ["control", "shift"]);
 	await api.pressKey("x", ["control", "shift"]);
 });
+serenade.app("code").command("search all files", async (api, matches) => {
+	await api.pressKey("f", ["control", "shift"]);
+});
