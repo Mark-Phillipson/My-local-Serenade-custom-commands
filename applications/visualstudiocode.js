@@ -23,17 +23,19 @@ serenade.app("code").command("previous issue", async (api, matches) => {
 serenade.app("code").command("select matching", async (api, matches) => {
 	await api.evaluateInPlugin("editor.action.addSelectionToNextFindMatch")
 });
-//select all occurrences of find match
-serenade.app("code").command("select all matching", async (api, matches) => {
-	await api.pressKey("l", ["control", "shift", "alt"]);
-});
 serenade.app("code").command("select matching <%number%>", async (api, matches) => {
+	region
 	const increment = parseInt(matches.number);
 	for (let index = 0; index < increment; index++) {
 	await api.evaluateInPlugin("editor.action.addSelectionToNextFindMatch")
 	}
 });
 serenade.app("code").command("select a language <%language%>", async (api, matches) => {
+	//select all occurrences of find match
+	serenade.app("code").command("select all matching", async (api, matches) => {
+		await api.pressKey("l", ["control", "shift", "alt"]);
+	});
+
 	await api.pressKey("k", ["control"]);
 	await api.pressKey("m");
 	await api.typeText(matches.language);
@@ -216,4 +218,7 @@ serenade.app("code").command("bookmark select lines", async (api, matches) => {
 });
 serenade.app("code").command("search all files", async (api, matches) => {
 	await api.pressKey("f", ["control", "shift"]);
+});
+serenade.app("code").command("go to symbol", async (api, matches) => {
+	await api.pressKey("o", ["control", "shift"]);
 });
