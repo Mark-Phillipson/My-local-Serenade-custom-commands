@@ -222,3 +222,6 @@ serenade.app("code").command("search all files", async (api, matches) => {
 serenade.app("code").command("go to symbol", async (api, matches) => {
 	await api.pressKey("o", ["control", "shift"]);
 });
+serenade.app("code").command("undo cursor", async (api, matches) => {
+	await api.pressKey("u", ["control"]);
+});
