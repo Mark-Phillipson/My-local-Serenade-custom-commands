@@ -53,7 +53,7 @@ serenade.app("cmd").command("git push", async (api,matches) => {
 	await api.pressKey("enter");
 });
 serenade.app("cmd").command("edit custom commands", async (api,matches) => {
-	await api.typeText("cd C:\\Users\\MPhil\\.serenade");
+	await api.typeText("cd C:\\Users\\MPhil\\.serenade\\scripts");
 	await api.pressKey("enter");
 	await api.typeText("code .");
 	await api.pressKey("enter");

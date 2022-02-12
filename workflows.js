@@ -35,7 +35,7 @@ serenade.app("code").command("edit custom commands", async (api) => {
 	await api.pressKey("t", ["control", "alt", "shift"]);
 	await api.typeText("cd C:\\");
 	await api.pressKey("enter");
-	await api.typeText("cd C:\\Users\\MPhil\\.serenade");
+	await api.typeText("cd C:\\Users\\MPhil\\.serenade\\scripts");
 	await api.pressKey("enter");
 	await api.pressKey("enter");
 	await api.typeText("code .");

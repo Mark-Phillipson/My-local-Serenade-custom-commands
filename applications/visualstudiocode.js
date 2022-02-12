@@ -225,3 +225,9 @@ serenade.app("code").command("go to symbol", async (api, matches) => {
 serenade.app("code").command("undo cursor", async (api, matches) => {
 	await api.pressKey("u", ["control"]);
 });
+serenade.app("code").command("focus explorer", async (api, matches) => {
+	await api.pressKey("f1");
+	await api.typeText("focus on folders view");
+	await api.delay(100);
+	await api.pressKey("enter");
+});
