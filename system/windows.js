@@ -72,3 +72,8 @@ serenade.global().command("switch to nine", async (api, matches) => {
 serenade.global().command("switch to zero", async (api, matches) => {
 	await api.pressKey("0", ["win"]);
 });
+serenade.global().command("switch and play", async (api,matches) => {
+	await api.pressKey("tab", ["alt"]);
+	await api.delay("100");
+	await api.pressKey("space");
+});

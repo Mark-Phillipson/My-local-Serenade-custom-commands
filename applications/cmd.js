@@ -71,3 +71,6 @@ serenade.app("cmd").command("git add commit", async (api, matches) => {
 	await api.typeText('git commit -am ""')
 	await api.pressKey("left");
 });
+serenade.app("cmd").command("make directory", async (api,matches) => {
+	await api.typeText("mkdir ");
+});
