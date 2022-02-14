@@ -231,3 +231,6 @@ serenade.app("code").command("focus explorer", async (api, matches) => {
 	await api.delay(100);
 	await api.pressKey("enter");
 });
+serenade.app("code").command("list members", async (api, matches) => {
+	await api.pressKey("space", ["control"]);
+});
