@@ -11,7 +11,7 @@ serenade.app("code").command("search files", async (api, matches) => {
 	await api.pressKey("f1");
 	await api.pressKey("backspace");
 });
-serenade.app("code").command("toggle terminal", async (api, matches) => {
+serenade.app("code").command("toggle terminal", async (Go, matches) => {
 	await api.evaluateInPlugin("workbench.action.terminal.toggleTerminal")
 });
 serenade.app("code").command("following issue", async (api, matches) => {
@@ -27,7 +27,7 @@ serenade.app("code").command("select matching <%number%>", async (api, matches) 
 	region
 	const increment = parseInt(matches.number);
 	for (let index = 0; index < increment; index++) {
-	await api.evaluateInPlugin("editor.action.addSelectionToNextFindMatch")
+		await api.evaluateInPlugin("editor.action.addSelectionToNextFindMatch")
 	}
 });
 serenade.app("code").command("select a language <%language%>", async (api, matches) => {
@@ -72,7 +72,7 @@ serenade.app("code").command("advanced new file", async (api, matches) => {
 });
 //unfortunately cannot get this to work
 serenade.app("code").command("add cursors to line ends", async (api, matches) => {
-	await api.evaluateInPlugin("editor.action.insertCursorAtEndOfEachLineSelected)")
+	await api.evaluateInPlugin("editor.action.insertCursorAtEndofEachLineSelected)")
 });
 serenade.app("code").command("open new terminal", async (api, matches) => {
 	await api.evaluateInPlugin("workbench.action.terminal.openNativeConsole")
@@ -90,28 +90,28 @@ serenade.app("code").command("resize terminal up", async (api, matches) => {
 serenade.app("code").command("show source control", async (api, matches) => {
 	await api.pressKey("g", ["control", "shift"]);
 });
-serenade.app("code").command("terminal page up", async (api,matches) => {
+serenade.app("code").command("terminal page up", async (api, matches) => {
 	await api.evaluateInPlugin("workbench.action.terminal.scrollUpPage")
 });
-serenade.app("code").command("terminal page down", async (api,matches) => {
+serenade.app("code").command("terminal page down", async (api, matches) => {
 	await api.evaluateInPlugin("workbench.action.terminal.scrollDownPage")
 });
-serenade.app("code").command("font zoom in", async (api,matches) => {
+serenade.app("code").command("font zoom in", async (api, matches) => {
 	await api.evaluateInPlugin("editor.action.fontZoomIn")
 });
-serenade.app("code").command("font zoom out", async (api,matches) => {
+serenade.app("code").command("font zoom out", async (api, matches) => {
 	await api.evaluateInPlugin("editor.action.fontZoomOut")
 });
-serenade.app("code").command("toggle problems", async (api,matches) => {
+serenade.app("code").command("toggle problems", async (api, matches) => {
 	await api.evaluateInPlugin("workbench.action.tasks.toggleProblems")
 });
-serenade.app("code").command("line down <%number%>", async (api,matches) => {
+serenade.app("code").command("line down <%number%>", async (api, matches) => {
 	const lines = matches.number;
 	for (let i = 0; i < lines; i++) {
 		await api.evaluateInPlugin("editor.action.moveLinesDownAction")
 	}
 });
-serenade.app("code").command("line up <%number%>", async (api,matches) => {
+serenade.app("code").command("line up <%number%>", async (api, matches) => {
 	const lines = matches.number;
 	for (let i = 0; i < lines; i++) {
 		await api.evaluateInPlugin("editor.action.moveLinesUpAction")
@@ -121,49 +121,49 @@ serenade.app("code").command("list directory", async (api, matches) => {
 	await api.typeText("dir");
 	await api.pressKey("enter");
 });
-serenade.app("code").command("current directory", async (api,matches) => {
+serenade.app("code").command("current directory", async (api, matches) => {
 	await api.typeText("cd ")
 });
-serenade.app("code").command("visual studio projects", async (api,matches) => {
+serenade.app("code").command("visual studio projects", async (api, matches) => {
 	await api.typeText("C:\\Users\\MPhil\\source\\repos")
 });
-serenade.app("code").command("dotnet watch", async (api,matches) => {
+serenade.app("code").command("dotnet watch", async (api, matches) => {
 	await api.typeText("dotnet watch run");
 	await api.pressKey("enter");
 });
-serenade.app("code").command("dotnet clean", async (api,matches) => {
+serenade.app("code").command("dotnet clean", async (api, matches) => {
 	await api.typeText("dotnet clean");
 	await api.pressKey("enter");
 });
-serenade.app("code").command("dotnet build", async (api,matches) => {
+serenade.app("code").command("dotnet build", async (api, matches) => {
 	await api.typeText("dotnet build");
 	await api.pressKey("enter");
 });
-serenade.app("code").command("dotnet run", async (api,matches) => {
+serenade.app("code").command("dotnet run", async (api, matches) => {
 	await api.typeText("dotnet run");
 	await api.pressKey("enter");
 });
-serenade.app("code").command("shutdown", async (api,matches) => {
+serenade.app("code").command("shutdown", async (api, matches) => {
 	await api.pressKey("c", ["control"]);
 });
-serenade.app("code").command("restart", async (api,matches) => {
+serenade.app("code").command("restart", async (api, matches) => {
 	await api.pressKey("r", ["control"]);
 });
-serenade.app("code").command("current project folder", async (api,matches) => {
+serenade.app("code").command("current project folder", async (api, matches) => {
 	await api.typeText("C:\\Users\\MPhil\\source\\repos\\Words\\WordsDotNet6")
 });
-serenade.app("code").command("run code", async (api,matches) => {
+serenade.app("code").command("run code", async (api, matches) => {
 	await api.typeText("code .")
 	await api.pressKey("enter");
 });
-serenade.app("code").command("git add", async (api,matches) => {
+serenade.app("code").command("git add", async (api, matches) => {
 	await api.typeText("git add ");
 });
-serenade.app("code").command("git status", async (api,matches) => {
+serenade.app("code").command("git status", async (api, matches) => {
 	await api.typeText("git status");
 	await api.pressKey("enter");
 });
-serenade.app("code").command("git commit", async (api,matches) => {
+serenade.app("code").command("git commit", async (api, matches) => {
 	await api.typeText('git commit -m ""')
 	await api.pressKey("left");
 });
@@ -171,17 +171,17 @@ serenade.app("code").command("git add commit", async (api, matches) => {
 	await api.typeText('git commit -am ""')
 	await api.pressKey("left");
 });
-serenade.app("code").command("git push", async (api,matches) => {
+serenade.app("code").command("git push", async (api, matches) => {
 	await api.typeText("git push");
 	await api.pressKey("enter");
 });
-serenade.app("code").command("edit custom commands", async (api,matches) => {
-	await api.typeText("cd C:\\Users\\MPhil\\.serenade");
+serenade.app("code").command("edit custom commands", async (api, matches) => {
+	await api.typeText("cd C:\\Users\\MPhil\\.serenade\\scripts");
 	await api.pressKey("enter");
 	await api.typeText("code .");
 	await api.pressKey("enter");
 });
-serenade.app("code").command("git clone", async (api,matches) => {
+serenade.app("code").command("git clone", async (api, matches) => {
 	await api.typeText("git clone ");
 });
 //https://github.com/alefragnani/vscode-bookmarks
@@ -233,4 +233,33 @@ serenade.app("code").command("focus explorer", async (api, matches) => {
 });
 serenade.app("code").command("list members", async (api, matches) => {
 	await api.pressKey("space", ["control"]);
+});
+serenade.app("code").command("search in files", async (api, matches) => {
+	await api.pressKey("f", ["control", "shift"]);
+});
+serenade.app("code").command("goto matching bracket", async (api,matches) => {
+	await api.pressKey("\\", ["control", "shift"]);
+});
+serenade.app("code").command("toggle line comment", async (api,matches) => {
+	await api.pressKey("/", ["control"]);
+});
+serenade.app("code").command("toggle problems", async (api,matches) => {
+	await api.pressKey("m", ["control", "shift"]);
+});
+serenade.app("code").command("go back", async (api,matches) => {
+	await api.pressKey("left", ["alt"]);
+});
+serenade.app("code").command("go forward", async (api,matches) => {
+	await api.pressKey("right", ["alt"]);
+});
+serenade.app("code").command("toggle word wrap", async (api,matches) => {
+	await api.pressKey("z", ["alt"]);
+});
+serenade.app("code").command("last edit", async (api,matches) => {
+	await api.pressKey("k", ["control"]);
+	await api.pressKey("q", ["control"]);
+});
+serenade.app("code").command("show recent", async (api,matches) => {
+	await api.pressKey("f", ["alt"]);
+	await api.pressKey("r", []);
 });

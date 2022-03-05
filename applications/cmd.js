@@ -74,3 +74,15 @@ serenade.app("cmd").command("git add commit", async (api, matches) => {
 serenade.app("cmd").command("make directory", async (api,matches) => {
 	await api.typeText("mkdir ");
 });
+serenade.app("cmd").command("start backend", async (api, matches) => {
+	await api.typeText("npm run start:backend");
+	await api.pressKey("enter");
+});
+serenade.app("cmd").command("npm install", async (api,matches) => {
+	await api.typeText("npm i");
+	await api.pressKey("enter");
+});
+serenade.app("cmd").command("npm start", async (api,matches) => {
+	await api.typeText("npm start");
+	await api.pressKey("enter");
+});

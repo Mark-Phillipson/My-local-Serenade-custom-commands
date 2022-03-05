@@ -6,7 +6,7 @@ false,"none"
 serenade.global().command("switch", async (api,matches) => {
   await api.pressKey("tab",["alt"]);
 });
-serenade.global().command("cycle open apps", async (api,matches) => {
+serenade.global().command("cycle apps", async (api,matches) => {
   await api.pressKey("tab",["win"]);
 });
 serenade.global().command("snap window right", async (api,matches) => {
