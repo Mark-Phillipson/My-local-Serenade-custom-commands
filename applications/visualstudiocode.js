@@ -263,3 +263,10 @@ serenade.app("code").command("show recent", async (api,matches) => {
 	await api.pressKey("f", ["alt"]);
 	await api.pressKey("r", []);
 });
+serenade.app("code").command("start application", async (api,matches) => {
+	await api.pressKey("f5", ["control"]);
+});
+serenade.app("code").command("words where clause", async (api,matches) => {
+	await api.typeText(".Where(v => v)");
+	await api.pressKey("left", []);
+});

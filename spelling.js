@@ -32,3 +32,30 @@ const OPT={
 	serenade.global().key("yankee", "y",undefined,OPT.AUTO_ANY);
 	serenade.global().key("zulu", "z",undefined,OPT.AUTO_ANY);
 
+	serenade.global().key("upper alpha", "A",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper bravo", "B",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper charlie", "C",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper delta", "D",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper echo", "E",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper foxtrot", "F",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper golf", "G",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper hotel", "H",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper india", "I",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper juliet", "J",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper kilo", "K",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper lima", "L",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper mike", "M",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper november", "N",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper oscar", "O",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper papa", "P",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper quebec", "Q",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper romeo", "R",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper sierra", "S",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper tango", "T",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper uniform", "U",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper victor", "V",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper whiskey", "W",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper x-ray", "X",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper yankee", "Y",undefined,OPT.AUTO_ANY);
+	serenade.global().key("upper zulu", "U",undefined,OPT.AUTO_ANY);
+

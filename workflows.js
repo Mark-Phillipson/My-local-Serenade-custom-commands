@@ -197,7 +197,7 @@ serenade.global().command("open voice launcher", async (api, matches) => {
 	open('https://localhost:5667/');
 });
 
-serenade.global().command("play words games", async (api, matches) => {
+serenade.global().command("play word games", async (api, matches) => {
 	open("C:\\Users\\MPhil\\.serenade\\scripts\\system\\playWords.bat");
 	open("C:\\Users\\MPhil\\source\\repos\\wordle\\index.html");
 	open("https://ambitious-mushroom-0b1943303.azurestaticapps.net/");
