@@ -57,5 +57,5 @@ const OPT={
 	serenade.global().key("upper whiskey", "W",undefined,OPT.AUTO_ANY);
 	serenade.global().key("upper x-ray", "X",undefined,OPT.AUTO_ANY);
 	serenade.global().key("upper yankee", "Y",undefined,OPT.AUTO_ANY);
-	serenade.global().key("upper zulu", "U",undefined,OPT.AUTO_ANY);
+serenade.global().key("upper zulu", "Z", undefined, OPT.AUTO_ANY);
 
