@@ -187,7 +187,9 @@ serenade.global().command("intelli sense <%SearchTerm%>", async (api, matches) =
 serenade.global().command("open google", async (api, matches) => {
 	open('http://google.com');
 });
-
+serenade.global().command('search list <%SearchTerm%>', async (api, matches) => {
+	await open.openApp(app, { arguments: [' / SearchIntelliSense ', ' / ' + matches.SearchTerm + ''] });
+})
 serenade.global().command("edit launches <%SearchTerm%>", async (api, matches) => {
 	open('https://localhost:5667/launchers?category=' + matches.SearchTerm)
 });
@@ -203,6 +205,8 @@ serenade.global().command("play word games", async (api, matches) => {
 	open("https://ambitious-mushroom-0b1943303.azurestaticapps.net/");
 	open("https://www.nytimes.com/games/wordle/index.html");
 });
+
+
 
 serenade.global().command("browse scripts <%search%>", async (api, matches) => {
 	await api.pressKey("r", ["windows"]);

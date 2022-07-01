@@ -270,3 +270,8 @@ serenade.app("code").command("words where clause", async (api,matches) => {
 	await api.typeText(".Where(v => v)");
 	await api.pressKey("left", []);
 });
+serenade.app("code").command("show code places", async (api, matches) => {
+	await api.pressKey("f1");
+	await api.pressKey("backspace");
+	await api.typeText("@: ");
+});
